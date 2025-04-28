@@ -1,0 +1,61 @@
+
+// === Variables ===
+$grid-gap: 16px;
+$grid-padding: 16px;
+$img-border-radius: 8px;
+
+$text-color-highlight: #1e90ff;
+$text-font-size: 18px;
+$text-font-weight: bold;
+$text-margin-bottom: 10px;
+
+// === Mixin ===
+@mixin grid-layout($min-width: 200px, $gap: $grid-gap, $padding: $grid-padding) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min-width, 1fr));
+  gap: $gap;
+  padding: $padding;
+}
+
+// === Servicios ===
+.grid-container {
+  @include grid-layout();
+
+  @media (max-width: 768px) {
+    @include grid-layout(150px, 12px, 12px); 
+    // ítems un poco más chicos, menos espacio
+  }
+
+  @media (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  border-radius: $img-border-radius;
+
+  @media (max-width: 480px) {
+    border-radius: 4px;
+  }
+}
+
+.diferenciar-textos p {
+  color: $text-color-highlight;
+  font-size: $text-font-size;
+  font-weight: $text-font-weight;
+  margin-bottom: $text-margin-bottom;
+
+  @media (max-width: 480px) {
+    font-size: 16px;
+  }
+}
+
+// En caso de que necesites asegurar estilos para el header acá
+header {
+  width: 100%;
+}

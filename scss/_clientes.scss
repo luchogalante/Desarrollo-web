@@ -1,0 +1,47 @@
+
+// === Variables ===
+$grid-gap: 1rem;
+$grid-padding: 2rem;
+
+$item-border-radius: 10px;
+$item-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+// === Mixin ===
+@mixin grid-layout($columns: 3, $rows: 2, $gap: $grid-gap, $padding: $grid-padding) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  grid-template-rows: repeat($rows, auto);
+  gap: $gap;
+  padding: $padding;
+}
+
+// === Clientes ===
+.galeria-grid {
+  @include grid-layout(3, 2);
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 0.8rem;
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: $item-border-radius;
+  box-shadow: $item-box-shadow;
+
+  @media (max-width: 480px) {
+    border-radius: 6px;
+  }
+}

@@ -1,0 +1,80 @@
+
+// Variables 
+$contact-bg-color: #111;
+$contact-text-color: white;
+$contact-padding: 40px 20px;
+$contact-font-family: Arial, sans-serif;
+
+$heading-font-size: 24px;
+$heading-margin-bottom: 20px;
+
+$info-font-size: 16px;
+$info-margin: 10px 0;
+$info-icon-margin-right: 10px;
+$info-icon-font-size: 18px;
+
+//  Mixin 
+@mixin flex-column($gap: 10px) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+// Contacto 
+.contacto {
+  background-color: $contact-bg-color;
+  color: $contact-text-color;
+  padding: $contact-padding;
+  font-family: $contact-font-family;
+
+  @media (max-width: 768px) {
+    padding: 30px 15px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 20px 10px;
+  }
+
+  h2 {
+    font-size: $heading-font-size;
+    margin-bottom: $heading-margin-bottom;
+
+    @media (max-width: 768px) {
+      font-size: 22px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 20px;
+    }
+  }
+
+  .info {
+    p {
+      @include flex-column();
+      align-items: center;
+      font-size: $info-font-size;
+      margin: $info-margin;
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+      }
+
+      @media (max-width: 480px) {
+        font-size: 12px;
+      }
+
+      i {
+        margin-right: $info-icon-margin-right;
+        font-size: $info-icon-font-size;
+
+        @media (max-width: 768px) {
+          font-size: 16px;
+        }
+
+        @media (max-width: 480px) {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

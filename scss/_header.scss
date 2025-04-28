@@ -1,0 +1,79 @@
+
+header {
+  padding: 40px;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+
+  img {
+    max-width: 30%;
+    height: auto;
+
+    @media (max-width: 768px) {
+      max-width: 40%;
+    }
+
+    @media (max-width: 480px) {
+      max-width: 50%;
+    }
+  }
+
+  h1 {
+    color: white;
+    font-size: 25px;
+
+    @media (max-width: 768px) {
+      font-size: 20px;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 18px;
+    }
+  }
+
+  nav {
+    ul {
+      display: flex;
+      gap: 15px;
+      list-style: none;
+      padding-left: 0;
+
+      @media (max-width: 768px) {
+        gap: 10px;
+      }
+
+      @media (max-width: 480px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+
+      li {
+        a {
+          text-decoration: none;
+          color: white;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 30px;
+  }
+
+  @media (max-width: 480px) {
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+// Reset para listas generales
+ul, ol {
+  list-style: none;
+  padding-left: 0;
+}
